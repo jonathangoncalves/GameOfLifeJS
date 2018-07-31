@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:script="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #board {
+      margin: 0 auto;
+      background: grey;
+      display: block;
+
+    }
+
+    #board div.linha {
+      display: block;
+      float: left;
+      border-left: 1px solid grey;
+      border-top: 1px solid grey;
+      clear: both;
+    }
+
+    #board div.linha:last-child {
+      border-bottom: 1px solid grey;
+
+    }
+
+    #board div.coluna {
+      position: relative;
+      float: left;
+      width: 10px;
+      height: 10px;
+      border-right: 1px solid grey;
+    }
+
+    #board div.coluna.alive {
+      background: white;
+    }
+
+    #board div.coluna.dead {
+      background: black;
+    }
+  </style>
+</head>
+<body>
+<div id="board">
+</div>
+<br><br><br><br>
+<a href="javascript:void(0);" onclick="GoL.start()">Start</a>
+<br>
+<a href="javascript:void(0);" onclick="GoL.stop()">Stop</a>
+<br>
+<a href="javascript:void(0);" onclick="GoL.restart()">Restart</a>
+<br>
+<a href="javascript:void(0);" onclick="GoL.random()">Random</a>
+<script type="text/javascript" src="life.js"></script>
+<script>
+  /*init_state = [
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 0, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1]
+  ];*/
+
+  init_state = [
+    [0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
+    [0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
+    [1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
+    [1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0],
+    [1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1],
+    [0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
+    [0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
+    [1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
+    [1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0],
+    [1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1]
+  ];
+
+  var GoL = new GameOfLife(init_state, 30);
+  GoL.render_state(init_state);
+  console.log(GoL.get_life_state(init_state, 2, 0));
+  //GoL.start();
+</script>
+</body>
+</html>
